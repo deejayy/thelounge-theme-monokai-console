@@ -1,0 +1,219 @@
+@font-face {
+  font-family: "Classic Console FA";
+  src: url(/packages/thelounge-theme-monokai-console/clacon2.woff2) format("woff2");
+}
+
+:root {
+  --color-black:       rgba(39,40,34,1);
+  --color-boldblack:   rgba(117,113,94,1);
+  --color-red:         rgba(249,38,114,1);
+  --color-boldred:     rgba(253,151,31,1);
+  --color-green:       rgba(166,226,46,1);
+  --color-boldgreen:   rgba(56,56,48,1);
+  --color-yellow:      rgba(244,191,117,1);
+  --color-boldyellow:  rgba(73,72,62,1);
+  --color-blue:        rgba(102,217,239,1);
+  --color-boldblue:    rgba(165,159,133,1);
+  --color-magenta:     rgba(174,129,255,1);
+  --color-boldmagenta: rgba(245,244,241,1);
+  --color-cyan:        rgba(161,239,228,1);
+  --color-boldcyan:    rgba(204,102,51,1);
+  --color-white:       rgba(248,248,242,1);
+  --color-boldwhite:   rgba(249,248,245,1);
+  --color-black-50:    rgba(39,40,34,0.5);
+}
+
+:root {
+  --body-color: var(--color-white);
+  --window-bg-color: var(--color-black);
+  --body-color-muted: var(--color-boldblack);
+  --body-bg-color: var(--color-boldgreen);
+  --button-color: var(--color-green);
+  --button-text-color-hover: var(--color-black);
+  --overlay-bg-color: var(--color-black-50);
+  --link-color: var(--color-blue);
+  --window-heading-color: var(--color-boldblue);
+  --date-marker-color: var(--color-boldyellow);
+  --unread-marker-color: var(--color-boldcyan);
+  --highlight-bg-color: var(--color-boldgreen);
+  --highlight-border-color: var(--color-blue);
+  --upload-progressbar-color: var(--button-color);
+  --main-font: "Classic Console FA";
+}
+
+body {
+  font-family: var(--main-font);
+  font-size: 16px;
+}
+
+#form,
+.messages .msg,
+.userlist {
+  font-size: 16px;
+  line-height: 17px;
+}
+
+#chat .from {
+  height: 16px;
+}
+
+#chat .content, #chat .from, #chat .time {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#chat .msg {
+  padding-top: 1px;
+  margin-bottom: -1px;
+}
+
+#form {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+::-webkit-input-placeholder {
+  color: var(--color-boldyellow);
+}
+
+::placeholder {
+  color: var(--color-boldyellow);
+  opacity: 1;
+}
+
+#chat.colored-nicks .user.color-1 { color: var(--color-red); }
+#chat.colored-nicks .user.color-2 { color: var(--color-boldred); }
+#chat.colored-nicks .user.color-3 { color: var(--color-green); }
+#chat.colored-nicks .user.color-4 { color: var(--color-yellow); }
+#chat.colored-nicks .user.color-5 { color: var(--color-blue); }
+#chat.colored-nicks .user.color-6 { color: var(--color-boldblue); }
+#chat.colored-nicks .user.color-7 { color: var(--color-magenta); }
+#chat.colored-nicks .user.color-8 { color: var(--color-boldmagenta); }
+#chat.colored-nicks .user.color-9 { color: var(--color-cyan); }
+#chat.colored-nicks .user.color-10 { color: var(--color-boldcyan); }
+#chat.colored-nicks .user.color-11 { color: var(--color-red); }
+#chat.colored-nicks .user.color-12 { color: var(--color-boldred); }
+#chat.colored-nicks .user.color-13 { color: var(--color-green); }
+#chat.colored-nicks .user.color-14 { color: var(--color-yellow); }
+#chat.colored-nicks .user.color-15 { color: var(--color-blue); }
+#chat.colored-nicks .user.color-16 { color: var(--color-boldblue); }
+#chat.colored-nicks .user.color-18 { color: var(--color-magenta); }
+#chat.colored-nicks .user.color-18 { color: var(--color-boldmagenta); }
+#chat.colored-nicks .user.color-19 { color: var(--color-cyan); }
+#chat.colored-nicks .user.color-20 { color: var(--color-boldcyan); }
+#chat.colored-nicks .user.color-21 { color: var(--color-red); }
+#chat.colored-nicks .user.color-22 { color: var(--color-boldred); }
+#chat.colored-nicks .user.color-23 { color: var(--color-green); }
+#chat.colored-nicks .user.color-24 { color: var(--color-yellow); }
+#chat.colored-nicks .user.color-25 { color: var(--color-blue); }
+#chat.colored-nicks .user.color-26 { color: var(--color-boldblue); }
+#chat.colored-nicks .user.color-27 { color: var(--color-magenta); }
+#chat.colored-nicks .user.color-28 { color: var(--color-boldmagenta); }
+#chat.colored-nicks .user.color-29 { color: var(--color-cyan); }
+#chat.colored-nicks .user.color-30 { color: var(--color-boldcyan); }
+#chat.colored-nicks .user.color-31 { color: var(--color-red); }
+#chat.colored-nicks .user.color-32 { color: var(--color-boldred); }
+
+code,
+pre,
+#chat .msg[data-type="monospace_block"] .text,
+.irc-monospace,
+textarea#user-specified-css-input {
+  background-color: var(--color-boldgreen);
+  color: var(--color-white);
+  font-family: var(--main-font);
+}
+
+code,
+.irc-monospace {
+  padding: 2px 4px;
+  color: var(--color-green);
+  background-color: var(--color-boldgreen);
+  border-radius: 2px;
+}
+
+#chat .userlist .count {
+  background-color: unset;
+}
+
+#chat .names .user {
+  line-height: unset;
+}
+
+a:focus {
+  outline: thin dotted;
+  outline: 1px auto -webkit-focus-ring-color;
+  outline-offset: 0px;
+}
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: unset;
+  line-height: unset;
+  color: var(--color-white);
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: var(--color-boldgreen);
+  border-radius: 4px;
+}
+
+#viewport .lt::before,
+#viewport .rt::before,
+#chat button.mentions::before,
+#chat button.close::before,
+#chat button.menu::before,
+#chat button.search::before,
+.channel-list-item::before,
+#footer .icon,
+#chat .count::before,
+#connect .extra-help,
+#settings .extra-help,
+#settings #play::before,
+#form #upload::before,
+#form #submit::before,
+#chat .msg[data-type="away"] .from::before,
+#chat .msg[data-type="back"] .from::before,
+#chat .msg[data-type="invite"] .from::before,
+#chat .msg[data-type="join"] .from::before,
+#chat .msg[data-type="kick"] .from::before,
+#chat .msg[data-type="part"] .from::before,
+#chat .msg[data-type="quit"] .from::before,
+#chat .msg[data-type="topic"] .from::before,
+#chat .msg[data-type="mode_channel"] .from::before,
+#chat .msg[data-type="mode"] .from::before,
+#chat .msg[data-command="motd"] .from::before,
+#chat .msg[data-command="help"] .from::before,
+#chat .msg[data-command="info"] .from::before,
+#chat .msg[data-type="ctcp"] .from::before,
+#chat .msg[data-type="ctcp_request"] .from::before,
+#chat .msg[data-type="whois"] .from::before,
+#chat .msg[data-type="nick"] .from::before,
+#chat .msg[data-type="action"] .from::before,
+#chat .msg[data-type="plugin"] .from::before,
+#chat .msg[data-type="raw"] .from::before,
+#chat .msg-statusmsg span::before,
+#chat .msg-shown-in-active span::before,
+#chat .toggle-button::after,
+#chat .toggle-content .more-caret::before,
+#chat .scroll-down-arrow::after,
+#chat .topic-container .save-topic span::before,
+#version-checker::before,
+.context-menu-item::before,
+#help .website-link::before,
+#help .documentation-link::before,
+#help .report-issue-link::before,
+#image-viewer .previous-image-btn::before,
+#image-viewer .next-image-btn::before,
+#image-viewer .open-btn::before,
+.channel-list-item .not-secure-icon::before,
+.channel-list-item .not-connected-icon::before,
+.channel-list-item .parted-channel-icon::before,
+.jump-to-input::before,
+#sidebar .collapse-network-icon::before {
+	font-family: "Classic Console FA";
+	font-size: 16px;
+	-webkit-font-smoothing: none;
+	-moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,31 @@
+{
+	"name": "thelounge-theme-monokai-console",
+	"version": "0.5.6",
+	"description": "Monokai Colors with Classic Console Neue font",
+	"main": "package.json",
+	"thelounge": {
+		"name": "monokai-console",
+		"type": "theme",
+		"files": [
+			"clacon2.woff2"
+		],
+		"css": "theme.css"
+	},
+	"license": "MIT",
+	"homepage": "https://github.com/deejayy/thelounge-theme-monokai-console",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/deejayy/thelounge-theme-monokai-console.git"
+	},
+	"keywords": [
+		"thelounge",
+		"thelounge-theme",
+		"monokai",
+		"monokai-console",
+		"classic-console",
+		"dark"
+	],
+	"bugs": {
+		"url": "https://github.com/deejayy/thelounge-theme-monokai-console/issues"
+	}
+}
