@@ -1,10 +1,10 @@
 {
 	"name": "thelounge-theme-monokai-console",
-	"version": "0.5.6",
+	"version": "0.6.0",
 	"description": "Monokai Colors with Classic Console Neue font",
 	"main": "package.json",
 	"thelounge": {
-		"name": "monokai-console",
+		"name": "Monokai Console",
 		"type": "theme",
 		"files": [
 			"clacon2.woff2"

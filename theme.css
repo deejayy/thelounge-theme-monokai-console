@@ -39,22 +39,24 @@
   --highlight-border-color: var(--color-blue);
   --upload-progressbar-color: var(--button-color);
   --main-font: "Classic Console FA";
+  --font-size: 16px;
+  --line-height: 17px;
 }
 
 body {
   font-family: var(--main-font);
-  font-size: 16px;
+  font-size: var(--font-size);
 }
 
 #form,
 .messages .msg,
 .userlist {
-  font-size: 16px;
-  line-height: 17px;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
 }
 
 #chat .from {
-  height: 16px;
+  height: var(--font-size);
 }
 
 #chat .content, #chat .from, #chat .time {
@@ -81,39 +83,6 @@ body {
   opacity: 1;
 }
 
-#chat.colored-nicks .user.color-1 { color: var(--color-red); }
-#chat.colored-nicks .user.color-2 { color: var(--color-boldred); }
-#chat.colored-nicks .user.color-3 { color: var(--color-green); }
-#chat.colored-nicks .user.color-4 { color: var(--color-yellow); }
-#chat.colored-nicks .user.color-5 { color: var(--color-blue); }
-#chat.colored-nicks .user.color-6 { color: var(--color-boldblue); }
-#chat.colored-nicks .user.color-7 { color: var(--color-magenta); }
-#chat.colored-nicks .user.color-8 { color: var(--color-boldmagenta); }
-#chat.colored-nicks .user.color-9 { color: var(--color-cyan); }
-#chat.colored-nicks .user.color-10 { color: var(--color-boldcyan); }
-#chat.colored-nicks .user.color-11 { color: var(--color-red); }
-#chat.colored-nicks .user.color-12 { color: var(--color-boldred); }
-#chat.colored-nicks .user.color-13 { color: var(--color-green); }
-#chat.colored-nicks .user.color-14 { color: var(--color-yellow); }
-#chat.colored-nicks .user.color-15 { color: var(--color-blue); }
-#chat.colored-nicks .user.color-16 { color: var(--color-boldblue); }
-#chat.colored-nicks .user.color-18 { color: var(--color-magenta); }
-#chat.colored-nicks .user.color-18 { color: var(--color-boldmagenta); }
-#chat.colored-nicks .user.color-19 { color: var(--color-cyan); }
-#chat.colored-nicks .user.color-20 { color: var(--color-boldcyan); }
-#chat.colored-nicks .user.color-21 { color: var(--color-red); }
-#chat.colored-nicks .user.color-22 { color: var(--color-boldred); }
-#chat.colored-nicks .user.color-23 { color: var(--color-green); }
-#chat.colored-nicks .user.color-24 { color: var(--color-yellow); }
-#chat.colored-nicks .user.color-25 { color: var(--color-blue); }
-#chat.colored-nicks .user.color-26 { color: var(--color-boldblue); }
-#chat.colored-nicks .user.color-27 { color: var(--color-magenta); }
-#chat.colored-nicks .user.color-28 { color: var(--color-boldmagenta); }
-#chat.colored-nicks .user.color-29 { color: var(--color-cyan); }
-#chat.colored-nicks .user.color-30 { color: var(--color-boldcyan); }
-#chat.colored-nicks .user.color-31 { color: var(--color-red); }
-#chat.colored-nicks .user.color-32 { color: var(--color-boldred); }
-
 code,
 pre,
 #chat .msg[data-type="monospace_block"] .text,
@@ -126,10 +95,8 @@ textarea#user-specified-css-input {
 
 code,
 .irc-monospace {
-  padding: 2px 4px;
   color: var(--color-green);
   background-color: var(--color-boldgreen);
-  border-radius: 2px;
 }
 
 #chat .userlist .count {
@@ -137,7 +104,7 @@ code,
 }
 
 #chat .names .user {
-  line-height: unset;
+  line-height: var(--line-height);
 }
 
 a:focus {
@@ -147,16 +114,270 @@ a:focus {
 }
 
 pre {
-  display: block;
-  padding: 9.5px;
-  margin: 0 0 10px;
-  font-size: unset;
-  line-height: unset;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
   color: var(--color-white);
-  word-break: break-all;
-  word-wrap: break-word;
   background-color: var(--color-boldgreen);
-  border-radius: 4px;
+}
+
+kbd {
+  line-height: var(--line-height);
+  color: var(--color-white);
+  background-color: var(--color-boldgreen);
+  text-shadow: 0 1px 0 var(--color-boldgreen);
+  border: 1px solid var(--color-boldyellow);
+  box-shadow: 0 2px 0 var(--color-boldyellow), inset 0 1px 1px var(--color-boldgreen), inset 0 -1px 3px var(--color-boldgreen);
+}
+
+.btn {
+  font-size: var(--font-size);
+  font-weight: normal;
+  letter-spacing: 0;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus,
+.btn:active,
+.btn:focus {
+  outline: 0;
+  box-shadow: unset;
+}
+
+#chat .msg[data-type="away"] .from::before,
+#chat .msg[data-type="back"] .from::before {
+  color: var(--color-boldblack);
+}
+
+#chat .msg[data-type="invite"] .from::before,
+#chat .msg[data-type="topic"] .from::before,
+#chat .msg[data-type="mode_channel"] .from::before,
+#chat .msg[data-type="mode"] .from::before,
+#chat .msg[data-type="whois"] .from::before,
+#chat .msg[data-type="nick"] .from::before,
+#chat .msg[data-type="join"] .from::before,
+#chat .msg.self[data-type="raw"] .from::before {
+  color: var(--color-green);
+}
+
+#chat .msg[data-type="kick"] .from::before,
+#chat .msg[data-type="part"] .from::before,
+#chat .msg[data-type="quit"] .from::before {
+  color: var(--color-red);
+}
+
+#chat .msg-statusmsg span::before,
+#chat .msg-shown-in-active span::before {
+  font-size: var(--font-size);
+}
+
+#chat .msg-statusmsg {
+  background-color: var(--color-boldyellow);
+  color: var(--color-yellow);
+}
+
+#chat .count::before {
+  color: var(--color-boldblue);
+}
+
+#viewport .lt,
+#viewport .rt,
+#chat button.mentions,
+#chat button.search,
+#chat button.menu,
+#chat button.close {
+  color: var(--color-blue);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+
+#viewport .lt::after {
+  background-color: var(--color-red);
+  border: 2px solid var(--window-bg-color);
+}
+
+#sidebar {
+  color: var(--color-boldblack);
+}
+
+.channel-list-item,
+#sidebar .empty {
+  font-size: var(--font-size);
+  align-items: center;
+}
+
+#footer button:hover,
+#footer button.active,
+.channel-list-item:hover,
+.channel-list-item.active {
+  color: var(--color-white);
+}
+
+.channel-list-item:hover,
+#footer button:hover {
+  background-color: var(--color-black-50);
+}
+
+#footer button.active,
+.channel-list-item.active {
+  background-color: var(--color-boldyellow);
+}
+
+.ui-sortable-ghost::after,
+.ui-sortable-dragging-touch-cue:not(.ui-sortable-dragging)::after {
+  background: var(--body-bg-color);
+  border: 1px dashed var(--color-boldblue);
+}
+
+#sidebar .empty {
+  line-height: var(--line-height);
+}
+
+.channel-list-item[data-type="lobby"] {
+  color: var(--color-green);
+  font-size: var(--font-size);
+  font-weight: normal;
+}
+
+.channel-list-item[data-type="lobby"]:hover,
+.channel-list-item[data-type="lobby"].active {
+  color: var(--color-cyan);
+}
+
+.channel-list-item.not-secure ,
+.channel-list-item.not-secure:hover,
+.channel-list-item.not-secure.active,
+.channel-list-item.not-connected,
+.channel-list-item.parted-channel,
+.channel-list-item.not-connected:hover,
+.channel-list-item.not-connected.active,
+.channel-list-item.parted-channel:hover,
+.channel-list-item.parted-channel.active {
+  color: var(--color-boldcyan);
+}
+
+.channel-list-item::before {
+  line-height: var(--line-height);
+}
+
+.channel-list-item .badge,
+#sidebar .add-channel-tooltip,
+.channel-list-item .close-tooltip {
+  line-height: var(--line-height);
+}
+
+.channel-list-item .badge {
+  color: var(--color-boldblue);
+  border-radius: 0;
+  font-size: calc(var(--font-size) * 0.8);
+}
+
+.channel-list-item .badge.highlight {
+  background: var(--color-black);
+  color: var(--color-boldblack);
+}
+
+.channel-list-item .close::before {
+  font-size: var(--font-size);
+  font-weight: normal;
+  line-height: var(--line-height);
+}
+
+.channel-list-item[data-type="lobby"] .add-channel::before {
+  font-size: var(--font-size);
+  font-weight: normal;
+  line-height: var(--line-height);
+}
+
+#footer {
+  font-size: var(--font-size);
+}
+
+#footer button {
+  color: var(--color-boldblue);
+}
+
+#footer .help.notified::after {
+  font-size: var(--font-size);
+}
+
+.window li,
+.window p,
+.window label,
+#settings .error {
+  font-size: var(--font-size);
+}
+
+.input {
+  background-color: var(--color-black);
+  border: 1px solid var(--color-boldblack);
+  color: var(--color-white);
+  font-size: var(--font-size);
+}
+
+.input:disabled {
+  background-color: var(--color-boldblack);
+}
+
+.input:not(:disabled):hover,
+.input:not(:disabled):focus {
+  border-color: var(--color-green);
+}
+
+textarea.input {
+  line-height: var(--line-height);
+}
+
+.window h1 {
+  font-size: calc(var(--font-size) * 2);
+}
+
+.window h2 {
+  color: var(--window-heading-color);
+  font-size: calc(var(--font-size) * 1.5);
+}
+
+.window h3 {
+  color: var(--window-heading-color);
+  font-size: var(--font-size);
+}
+
+#chat .header {
+  border-bottom: 1px solid var(--color-boldblack);
+}
+
+.header .title {
+  font-size: var(--font-size);
+}
+
+.header .topic {
+  color: var(--body-color-muted);
+  font-size: var(--font-size);
+}
+
+.header .topic-input {
+  border: 1px solid var(--color-boldblack);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+
+.topic-container .save-topic span {
+  font-size: var(--font-size);
+  color: var(--color-blue);
+}
+
+#form,
+.messages .msg,
+.userlist {
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+
+#chat .userlist {
+  border-left: 1px solid var(--color-boldblack);
+}
+
+#chat .user {
+  color: var(--color-green);
 }
 
 #viewport .lt::before,
@@ -211,9 +432,171 @@ pre {
 .channel-list-item .not-connected-icon::before,
 .channel-list-item .parted-channel-icon::before,
 .jump-to-input::before,
+.password-container .reveal-password span::before,
+.topic-container .save-topic span::before,
+.password-container .reveal-password-visible span::before,
 #sidebar .collapse-network-icon::before {
-	font-family: "Classic Console FA";
-	font-size: 16px;
-	-webkit-font-smoothing: none;
-	-moz-osx-font-smoothing: grayscale;
+  font-family: "Classic Console FA";
+  font-size: var(--font-size);
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#chat.colored-nicks .user.color-1 { color: var(--color-red); }
+#chat.colored-nicks .user.color-2 { color: var(--color-boldred); }
+#chat.colored-nicks .user.color-3 { color: var(--color-green); }
+#chat.colored-nicks .user.color-4 { color: var(--color-yellow); }
+#chat.colored-nicks .user.color-5 { color: var(--color-blue); }
+#chat.colored-nicks .user.color-6 { color: var(--color-boldblue); }
+#chat.colored-nicks .user.color-7 { color: var(--color-magenta); }
+#chat.colored-nicks .user.color-8 { color: var(--color-boldmagenta); }
+#chat.colored-nicks .user.color-9 { color: var(--color-cyan); }
+#chat.colored-nicks .user.color-10 { color: var(--color-boldcyan); }
+#chat.colored-nicks .user.color-11 { color: var(--color-red); }
+#chat.colored-nicks .user.color-12 { color: var(--color-boldred); }
+#chat.colored-nicks .user.color-13 { color: var(--color-green); }
+#chat.colored-nicks .user.color-14 { color: var(--color-yellow); }
+#chat.colored-nicks .user.color-15 { color: var(--color-blue); }
+#chat.colored-nicks .user.color-16 { color: var(--color-boldblue); }
+#chat.colored-nicks .user.color-18 { color: var(--color-magenta); }
+#chat.colored-nicks .user.color-18 { color: var(--color-boldmagenta); }
+#chat.colored-nicks .user.color-19 { color: var(--color-cyan); }
+#chat.colored-nicks .user.color-20 { color: var(--color-boldcyan); }
+#chat.colored-nicks .user.color-21 { color: var(--color-red); }
+#chat.colored-nicks .user.color-22 { color: var(--color-boldred); }
+#chat.colored-nicks .user.color-23 { color: var(--color-green); }
+#chat.colored-nicks .user.color-24 { color: var(--color-yellow); }
+#chat.colored-nicks .user.color-25 { color: var(--color-blue); }
+#chat.colored-nicks .user.color-26 { color: var(--color-boldblue); }
+#chat.colored-nicks .user.color-27 { color: var(--color-magenta); }
+#chat.colored-nicks .user.color-28 { color: var(--color-boldmagenta); }
+#chat.colored-nicks .user.color-29 { color: var(--color-cyan); }
+#chat.colored-nicks .user.color-30 { color: var(--color-boldcyan); }
+#chat.colored-nicks .user.color-31 { color: var(--color-red); }
+#chat.colored-nicks .user.color-32 { color: var(--color-boldred); }
+
+#chat .content {
+  border-left: 1px solid var(--color-boldblue);
+}
+
+#chat .self .content {
+  color: var(--color-boldblue);
+}
+
+#chat .msg.channel_list_loading .text {
+  color: var(--color-boldblack);
+  font-style: normal;
+}
+
+#chat table.channel-list th,
+#chat table.ban-list th,
+#chat table.invite-list th,
+#chat table.ignore-list th,
+#chat table.channel-list td,
+#chat table.ban-list td,
+#chat table.invite-list td {
+  border-bottom-color: var(--color-white)
+}
+
+#chat .msg[data-type="action"] .from,
+#chat .msg[data-type="action"] .content,
+#chat .msg[data-type="action"] .user {
+  color: var(--color-boldred);
+}
+
+#chat .msg[data-type="notice"] .time,
+#chat .msg[data-type="wallops"] .time,
+#chat .msg[data-type="notice"] .content,
+#chat .msg[data-type="wallops"] .content,
+#chat .msg[data-type="notice"] .user,
+#chat .msg[data-type="wallops"] .user {
+  color: var(--color-blue);
+}
+
+#chat .msg[data-type="error"],
+#chat .msg[data-type="error"] .from {
+  color: var(--color-red);
+}
+
+#chat .chat-view[data-type="channel"] .msg.highlight .time {
+  color: var(--color-boldblue);
+}
+
+#chat .toggle-content {
+  background: var(--color-white);
+}
+
+#chat .toggle-content .head {
+  font-weight: normal;
+}
+
+#chat .toggle-type-error,
+#chat .toggle-text .body {
+  color: var(--color-boldblue);
+}
+
+#chat .user-mode::before {
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+
+#loading {
+  font-size: var(--font-size);
+}
+
+#settings #play {
+  font-size: var(--font-size);
+}
+
+#settings #change-password .error {
+  color: var(--color-red);
+}
+
+#settings #change-password .success {
+  color: var(--color-green);
+}
+
+#settings .error {
+  color: var(--color-red);
+}
+
+.password-container .reveal-password-visible span::before {
+  color: var(--color-red);
+}
+
+#help .help-item {
+  font-size: var(--font-size);
+}
+
+#help .help-item .subject.gesture {
+	font-weight: normal;
+}
+
+.changelog-text {
+	line-height: var(--line-height);
+}
+
+#version-checker::before {
+	font-size: var(--font-size);
+}
+
+#version-checker.loading {
+	background-color: var(--color-black);
+	color: var(--color-boldblack);
+}
+
+#version-checker.new-version,
+#version-checker.new-packages {
+	color: var(--color-boldcyan);
+	background-color: var(--color-black);
+}
+
+#version-checker.error {
+	color: var(--color-red);
+	background-color: var(--color-black);
+}
+
+#version-checker.up-to-date {
+	background-color: var(--color-boldblack);
+	color: var(--color-green);
 }
