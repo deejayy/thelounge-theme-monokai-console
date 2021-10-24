@@ -1,6 +1,6 @@
 {
 	"name": "thelounge-theme-monokai-console",
-	"version": "0.6.0",
+	"version": "0.6.3",
 	"description": "Monokai Colors with Classic Console Neue font",
 	"main": "package.json",
 	"thelounge": {
